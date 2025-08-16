@@ -43,7 +43,7 @@ AI ShellPanel is an intelligent web application that provides detailed explanati
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/shell-panel-aipowered.git
+git clone https://github.com/ambaskaryash/shell-panel-aipowered.git
 cd shell-panel-aipowered
 
 # Install dependencies
@@ -143,7 +143,7 @@ shell-panel-aipowered/
 3. Deploy automatically on push to main branch
 
 ### One-Click Deploy
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/shell-panel-aipowered)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/ambaskaryash/shell-panel-aipowered)
 
 ## 🔒 Security Features
 
@@ -177,14 +177,14 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 
 ## 📚 Documentation
 
-- **[Wiki](https://github.com/yourusername/shell-panel-aipowered/wiki)**: Complete documentation and guides
-- **[API Reference](https://github.com/yourusername/shell-panel-aipowered/wiki/API-Documentation)**: Detailed API documentation
-- **[Security Guide](https://github.com/yourusername/shell-panel-aipowered/wiki/Security)**: Security features and best practices
+- **[Wiki](https://github.com/ambaskaryash/shell-panel-aipowered/wiki)**: Complete documentation and guides
+- **[API Reference](https://github.com/ambaskaryash/shell-panel-aipowered/wiki/API-Documentation)**: Detailed API documentation
+- **[Security Guide](https://github.com/ambaskaryash/shell-panel-aipowered/wiki/Security)**: Security features and best practices 
 
 ## 🐛 Bug Reports & Feature Requests
 
-- **Issues**: [Report bugs here](https://github.com/yourusername/shell-panel-aipowered/issues)
-- **Discussions**: [Feature requests and questions](https://github.com/yourusername/shell-panel-aipowered/discussions)
+- **Issues**: [Report bugs here](https://github.com/ambaskaryash/shell-panel-aipowered/issues)
+- **Discussions**: [Feature requests and questions](https://github.com/ambaskaryash/shell-panel-aipowered/discussions)
 
 ## 📄 License
 
