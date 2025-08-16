@@ -11,10 +11,13 @@ const dmSans = DM_Sans({
 })
 
 export const metadata: Metadata = {
-  title: "ShellExplain AI - AI-Powered Shell Command Explanation Tool",
+  title: "AI Shell Explainer - AI-Powered Shell Command Analysis",
   description:
     "Understand any shell command with AI-powered explanations, safety warnings, and comprehensive documentation.",
-  generator: "v0.app",
+  icons: {
+    icon: "/favicon.ico",
+  },
+    generator: 'v0.app'
 }
 
 export default function RootLayout({

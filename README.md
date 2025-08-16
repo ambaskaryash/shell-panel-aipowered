@@ -1,30 +1,40 @@
-# Explainshell alternative
+# ShellExplain AI
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+An advanced AI-powered shell command explanation tool that helps users understand complex shell commands with detailed breakdowns, safety warnings, and educational insights.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/ambaskaryashs-projects/v0-explainshell-alternative)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/projects/3SOyIXo5AsK)
+## Features
 
-## Overview
+- **AI-Powered Analysis**: Uses advanced AI to explain any shell command
+- **Visual Command Breakdown**: Interactive visual representation of command parts
+- **Safety Warnings**: Identifies potentially dangerous commands
+- **Dark/Light Mode**: Toggle between themes
+- **Responsive Design**: Works on all device sizes
+- **Real-time Analysis**: Instant explanations as you type
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+## Getting Started
 
-## Deployment
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Set up environment variables (see below)
+4. Run the development server: `npm run dev`
 
-Your project is live at:
+## Environment Variables
 
-**[https://vercel.com/ambaskaryashs-projects/v0-explainshell-alternative](https://vercel.com/ambaskaryashs-projects/v0-explainshell-alternative)**
+Create a `.env.local` file with:
 
-## Build your app
+\`\`\`
+GROQ_API_KEY=your_groq_api_key_here
+\`\`\`
 
-Continue building your app on:
+## Tech Stack
 
-**[https://v0.app/chat/projects/3SOyIXo5AsK](https://v0.app/chat/projects/3SOyIXo5AsK)**
+- Next.js 15
+- React 19
+- TypeScript
+- Tailwind CSS
+- Groq AI API
+- Radix UI Components
 
-## How It Works
+## License
 
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+MIT License

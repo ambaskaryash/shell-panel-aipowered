@@ -4,10 +4,9 @@ import { useState, useRef, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Alert, AlertDescription } from "@/components/ui/alert"
-import { Search, Terminal, Play, BookOpen, Shield, AlertTriangle, Sparkles } from "lucide-react"
+import { Search, Terminal, Play, BookOpen, AlertTriangle, Sparkles } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { VisualCommandExplainer } from "@/components/visual-command-explainer"
 
@@ -54,8 +53,6 @@ export default function ShellExplainer() {
     setParsedCommand([])
 
     try {
-      console.log("[v0] Starting AI analysis for command:", command)
-
       const response = await fetch("/api/explain", {
         method: "POST",
         headers: {
@@ -70,12 +67,10 @@ export default function ShellExplainer() {
       }
 
       const data: AIExplanation = await response.json()
-      console.log("[v0] Received AI response:", data)
 
       setAiExplanation(data)
       setParsedCommand(data.parts || [])
     } catch (err) {
-      console.error("[v0] Error analyzing command:", err)
       setError(err instanceof Error ? err.message : "An error occurred while analyzing the command")
     } finally {
       setIsAnalyzing(false)
@@ -111,26 +106,20 @@ export default function ShellExplainer() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="flex items-center justify-center w-10 h-10 bg-primary rounded-lg">
-                <Terminal className="w-6 h-6 text-primary-foreground" />
+              <div className="flex items-center justify-center w-12 h-12">
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ai_shell_new_logo-6qoFC8RcqszdKAJ3XajSDAqgYvnPG8.png"
+                  alt="AI Shell Explainer"
+                  className="w-12 h-12 object-contain"
+                />
               </div>
               <div>
-                <h1 className="text-xl sm:text-2xl font-bold text-foreground">ShellPanel AI</h1>
-                <p className="text-xs sm:text-sm text-muted-foreground">AI-Powered Shell Command Explanation Tool</p>
+                <h1 className="text-xl sm:text-2xl font-bold text-foreground">AI Shell Explainer</h1>
+                <p className="text-xs sm:text-sm text-muted-foreground">AI-Powered Shell Command Analysis</p>
               </div>
             </div>
             <div className="flex items-center gap-2">
               <ThemeToggle />
-              <div className="hidden sm:flex items-center gap-2">
-                <Badge variant="secondary" className="gap-1">
-                  <Sparkles className="w-3 h-3" />
-                  AI-Powered
-                </Badge>
-                <Badge variant="outline" className="gap-1">
-                  <Shield className="w-3 h-3" />
-                  Safe Learning
-                </Badge>
-              </div>
             </div>
           </div>
         </div>
@@ -284,7 +273,7 @@ export default function ShellExplainer() {
                       <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-primary absolute -top-1 -right-1" />
                     </div>
                   </div>
-                  <h2 className="text-xl sm:text-2xl font-semibold mb-2">Welcome to ShellExplain AI</h2>
+                  <h2 className="text-xl sm:text-2xl font-semibold mb-2">Welcome to AI Shell Explainer</h2>
                   <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 max-w-md mx-auto px-4">
                     Enter any shell command and our AI will provide comprehensive explanations, safety warnings, and
                     educational insights in real-time.
