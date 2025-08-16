@@ -42,6 +42,12 @@ export default function ShellExplainer() {
     "docker run -d -p 8080:80 --name myapp nginx:latest",
     "sudo rm -rf /var/log/*",
     "chmod 755 script.sh && ./script.sh",
+    "ls -la | grep \".txt\"",
+    "find /var/log -name \"*.log\" -mtime -7",
+    "ps aux | grep node | awk '{print $2}'",
+    "tar -czf backup.tar.gz /home/user/documents",
+    "grep -r \"pattern\" . --include=\"*.py\"",
+    "git log --oneline -n 10",
   ]
 
   const analyzeCommand = async () => {
@@ -109,12 +115,12 @@ export default function ShellExplainer() {
               <div className="flex items-center justify-center w-12 h-12">
                 <img
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ai_shell_new_logo-6qoFC8RcqszdKAJ3XajSDAqgYvnPG8.png"
-                  alt="AI Shell Explainer"
+                  alt="AI ShellPanel"
                   className="w-12 h-12 object-contain"
                 />
               </div>
               <div>
-                <h1 className="text-xl sm:text-2xl font-bold text-foreground">AI Shell Explainer</h1>
+                <h1 className="text-xl sm:text-2xl font-bold text-foreground">AI ShellPanel</h1>
                 <p className="text-xs sm:text-sm text-muted-foreground">AI-Powered Shell Command Analysis</p>
               </div>
             </div>
@@ -126,14 +132,23 @@ export default function ShellExplainer() {
       </header>
 
       <div className="container mx-auto px-4 py-4 sm:py-8">
+        <header className="text-center mb-8">
+          <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            AI Shell Command Explainer & Analyzer
+          </h1>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Understand any shell command with AI-powered explanations, safety warnings, and comprehensive documentation. 
+            Perfect for learning Linux commands, bash scripting, and terminal usage.
+          </p>
+        </header>
         <div className="grid grid-cols-1 xl:grid-cols-4 gap-4 sm:gap-8">
           {/* Sidebar */}
-          <div className="xl:col-span-1 order-2 xl:order-1">
+          <aside className="xl:col-span-1 order-2 xl:order-1 space-y-4">
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-lg">
                   <BookOpen className="w-5 h-5" />
-                  Quick Examples
+                  Popular Commands
                 </CardTitle>
                 <CardDescription className="text-sm">Click any example to analyze it with AI</CardDescription>
               </CardHeader>
@@ -145,6 +160,7 @@ export default function ShellExplainer() {
                       variant={selectedExample === example ? "default" : "ghost"}
                       className="w-full justify-start text-left h-auto p-2 sm:p-3 mb-2"
                       onClick={() => handleExampleClick(example)}
+                      title={`Analyze: ${example}`}
                     >
                       <code className="text-xs font-mono break-all">{example}</code>
                     </Button>
@@ -152,7 +168,30 @@ export default function ShellExplainer() {
                 </ScrollArea>
               </CardContent>
             </Card>
-          </div>
+            
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Command Categories</CardTitle>
+                <CardDescription className="text-sm">Learn by category</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-2 text-sm">
+                  <div className="p-2 bg-muted rounded">
+                    <strong>File Operations:</strong> ls, cp, mv, rm, find, tar
+                  </div>
+                  <div className="p-2 bg-muted rounded">
+                    <strong>System Info:</strong> ps, top, df, du, free, uptime
+                  </div>
+                  <div className="p-2 bg-muted rounded">
+                    <strong>Network:</strong> curl, wget, netstat, ssh, scp
+                  </div>
+                  <div className="p-2 bg-muted rounded">
+                    <strong>Text Processing:</strong> grep, sed, awk, sort, uniq, wc
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </aside>
 
           {/* Main Content */}
           <div className="xl:col-span-3 space-y-4 sm:space-y-6 order-1 xl:order-2">
@@ -293,7 +332,49 @@ export default function ShellExplainer() {
             )}
           </div>
         </div>
+        
+        <section className="mt-12">
+          <FAQ />
+        </section>
+
+        <footer className="mt-12 text-center text-sm text-muted-foreground">
+          <p>
+            <strong>AI ShellPanel</strong> - Your AI-powered shell command companion. 
+            Learn Linux commands, understand bash scripting, and master the terminal with confidence.
+          </p>
+          <p className="mt-2">
+            Built with Next.js, TypeScript, and AI technology for developers, by developers.
+          </p>
+        </footer>
       </div>
     </div>
+  )
+}
+
+function FAQ() {
+  return (
+    <Card className="mt-8">
+      <CardHeader>
+        <CardTitle className="text-xl">Frequently Asked Questions</CardTitle>
+      </CardHeader>
+      <CardContent className="space-y-4 text-sm text-muted-foreground">
+        <div>
+          <strong>Q: How accurate are the AI explanations?</strong><br/>
+          A: The AI provides highly accurate explanations based on extensive training data, but always cross-reference with official documentation for critical operations.
+        </div>
+        <div>
+          <strong>Q: Does this work with Windows PowerShell commands?</strong><br/>
+          A: Currently optimized for Unix/Linux shell commands (bash, zsh, sh). PowerShell support is planned for future updates.
+        </div>
+        <div>
+          <strong>Q: Are dangerous commands flagged?</strong><br/>
+          A: Yes! The AI automatically identifies potentially destructive commands (like rm -rf) and provides prominent safety warnings.
+        </div>
+        <div>
+          <strong>Q: Can I use this offline?</strong><br/>
+          A: No, real-time AI analysis requires an internet connection to query the Perplexity API.
+        </div>
+      </CardContent>
+    </Card>
   )
 }

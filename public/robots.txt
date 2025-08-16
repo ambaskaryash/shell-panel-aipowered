@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Allow crawling of all content
+Disallow: 
+
+# Block access to API routes
+Disallow: /api/
+
+# Block access to internal routes
+Disallow: /_next/
+Disallow: /static/
+
+# Sitemap location
+Sitemap: https://explainshell-prodapp.vercel.app/sitemap.xml
+
+# Crawl delay for bots
+Crawl-delay: 1
