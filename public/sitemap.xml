@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://shell-panel-ai.vercel.app</loc>
+    <loc>https://explainshell-prodapp.vercel.app</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -9,70 +9,70 @@
   
   <!-- Popular command examples for better SEO -->
   <url>
-    <loc>https://shell-panel-ai.vercel.app/?command=ls+-la</loc>
+    <loc>https://explainshell-prodapp.vercel.app/?command=ls+-la</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://shell-panel-ai.vercel.app/?command=chmod+755+file.sh</loc>
+    <loc>https://explainshell-prodapp.vercel.app/?command=chmod+755+file.sh</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://shell-panel-ai.vercel.app/?command=find+.+-name+"*.js"+-type+f</loc>
+    <loc>https://explainshell-prodapp.vercel.app/?command=find+.+-name+"*.js"+-type+f</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://shell-panel-ai.vercel.app/?command=grep+-r+"pattern"+.</loc>
+    <loc>https://explainshell-prodapp.vercel.app/?command=grep+-r+"pattern"+.</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://shell-panel-ai.vercel.app/?command=awk+'{print+$1}'+file.txt</loc>
+    <loc>https://explainshell-prodapp.vercel.app/?command=awk+'{print+$1}'+file.txt</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://shell-panel-ai.vercel.app/?command=sed+'s/old/new/g'+file.txt</loc>
+    <loc>https://explainshell-prodapp.vercel.app/?command=sed+'s/old/new/g'+file.txt</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://shell-panel-ai.vercel.app/?command=tar+-czf+archive.tar.gz+folder/</loc>
+    <loc>https://explainshell-prodapp.vercel.app/?command=tar+-czf+archive.tar.gz+folder/</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://shell-panel-ai.vercel.app/?command=curl+-X+POST+-H+"Content-Type:+application/json"+-d+'{"key":"value"}'+https://api.example.com</loc>
+    <loc>https://explainshell-prodapp.vercel.app/?command=curl+-X+POST+-H+"Content-Type:+application/json"+-d+'{"key":"value"}'+https://api.example.com</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://shell-panel-ai.vercel.app/?command=docker+run+-d+-p+80:80+nginx</loc>
+    <loc>https://explainshell-prodapp.vercel.app/?command=docker+run+-d+-p+80:80+nginx</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <url>
-    <loc>https://shell-panel-ai.vercel.app/?command=git+clone+https://github.com/user/repo.git</loc>
+    <loc>https://explainshell-prodapp.vercel.app/?command=git+clone+https://github.com/user/repo.git</loc>
     <lastmod>2024-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
