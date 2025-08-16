@@ -9,6 +9,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Search, Terminal, Play, BookOpen, AlertTriangle, Sparkles } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { VisualCommandExplainer } from "@/components/visual-command-explainer"
+import VisitorCounterDisplay from "@/components/visitor-counter"
 
 interface CommandPart {
   text: string
@@ -345,6 +346,9 @@ export default function ShellExplainer() {
           <p className="mt-2">
             Built with Next.js, TypeScript, and AI technology for developers, by developers.
           </p>
+          <div className="mt-4">
+            <VisitorCounterDisplay />
+          </div>
         </footer>
       </div>
     </div>
