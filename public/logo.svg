@@ -1,0 +1,32 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0ea5e9;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Terminal Shape -->
+  <rect x="30" y="40" width="140" height="120" fill="url(#logoGradient)" rx="10"/>
+  <rect x="35" y="45" width="130" height="110" fill="#1e293b" rx="8"/>
+  
+  <!-- Terminal Header -->
+  <rect x="35" y="45" width="130" height="20" fill="#334155" rx="8"/>
+  <circle cx="50" cy="55" r="4" fill="#ef4444"/>
+  <circle cx="65" cy="55" r="4" fill="#f59e0b"/>
+  <circle cx="80" cy="55" r="4" fill="#10b981"/>
+  
+  <!-- Code Lines -->
+  <rect x="45" y="75" width="30" height="3" fill="#10b981" rx="1"/>
+  <rect x="45" y="85" width="20" height="3" fill="#94a3b8" rx="1"/>
+  <rect x="45" y="95" width="25" height="3" fill="#94a3b8" rx="1"/>
+  <rect x="45" y="105" width="35" height="3" fill="#94a3b8" rx="1"/>
+  <rect x="45" y="115" width="15" height="3" fill="#94a3b8" rx="1"/>
+  <rect x="45" y="125" width="40" height="3" fill="#10b981" rx="1"/>
+  <rect x="45" y="135" width="20" height="3" fill="#94a3b8" rx="1"/>
+  
+  <!-- AI Sparkle -->
+  <circle cx="150" cy="40" r="8" fill="#fbbf24" opacity="0.8"/>
+  <circle cx="160" cy="30" r="4" fill="#fbbf24" opacity="0.6"/>
+  <circle cx="170" cy="45" r="3" fill="#fbbf24" opacity="0.7"/>
+</svg>

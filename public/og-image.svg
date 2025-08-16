@@ -1,0 +1,30 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0ea5e9;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Terminal Window -->
+  <rect x="200" y="150" width="800" height="330" fill="#1e293b" rx="15" stroke="#334155" stroke-width="2"/>
+  
+  <!-- Terminal Header -->
+  <rect x="200" y="150" width="800" height="40" fill="#334155" rx="15"/>
+  <circle cx="240" cy="170" r="8" fill="#ef4444"/>
+  <circle cx="270" cy="170" r="8" fill="#f59e0b"/>
+  <circle cx="300" cy="170" r="8" fill="#10b981"/>
+  
+  <!-- Terminal Text -->
+  <text x="220" y="220" font-family="monospace" font-size="18" fill="#10b981">$ explain ls -la</text>
+  <text x="220" y="260" font-family="monospace" font-size="16" fill="#e2e8f0">AI: Lists all files and directories in long format</text>
+  <text x="220" y="290" font-family="monospace" font-size="16" fill="#94a3b8">-l: long listing format with permissions</text>
+  <text x="220" y="320" font-family="monospace" font-size="16" fill="#94a3b8">-a: show hidden files starting with .</text>
+  
+  <!-- Logo Text -->
+  <text x="600" y="550" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="white" text-anchor="middle">AI ShellPanel</text>
+  <text x="600" y="580" font-family="Arial, sans-serif" font-size="18" fill="#cbd5e1" text-anchor="middle">AI-Powered Shell Command Analysis</text>
+</svg>
