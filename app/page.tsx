@@ -323,7 +323,10 @@ export default function ShellExplainer() {
                       <Play className="w-4 h-4 mr-2" />
                       Try Example
                     </Button>
-                    <Button variant="outline" className="w-full sm:w-auto bg-transparent">
+                    <Button 
+                      variant="outline" 
+                      className="w-full sm:w-auto bg-transparent"
+                      onClick={() => window.open('https://github.com/ambaskaryash/shell-panel-aipowered/wiki', '_blank')}>
                       <BookOpen className="w-4 h-4 mr-2" />
                       Learn More
                     </Button>
