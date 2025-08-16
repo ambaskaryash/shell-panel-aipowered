@@ -30,7 +30,7 @@ export default function VisitorCounterDisplay() {
       } catch (error) {
         // Fallback to localStorage only if server fails
         const stats = VisitorCounter.getStats()
-        setVisitorCount(stats.totalVisits)
+        setVisitorCount(stats.uniqueVisitors)
       } finally {
         setLoading(false)
       }
