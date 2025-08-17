@@ -44,7 +44,6 @@ Respond ONLY with valid JSON, no markdown formatting.`
       system:
         "You are an expert system administrator and shell command educator. Provide accurate, detailed explanations of shell commands with proper safety warnings. Always respond with valid JSON format only.",
       prompt: prompt,
-      maxTokens: 2000,
       temperature: 0.1,
     })
 

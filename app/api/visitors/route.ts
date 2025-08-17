@@ -41,7 +41,7 @@ function getClientIP(request: NextRequest): string {
   if (cfConnectingIP) {
     return cfConnectingIP
   }
-  return request.ip || "unknown"
+  return "unknown"
 }
 
 export async function GET() {
