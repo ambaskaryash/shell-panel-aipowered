@@ -3,11 +3,11 @@ import type { Metadata } from "next"
 import { DM_Sans } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
-import { Analytics } from '@vercel/analytics/next'
+  import { Analytics } from '@vercel/analytics/next'
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
-  display: "swap",+
+  display: "swap",
   variable: "--font-dm-sans",
 })
 
@@ -77,11 +77,7 @@ export const metadata: Metadata = {
   classification: "Development Tools",
 }
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${dmSans.variable} antialiased`} suppressHydrationWarning>
       <head>
@@ -89,7 +85,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
-              "@context": "schema.org",
+              "@context": "https://schema.org",
               "@type": "WebApplication",
               name: "AI ShellPanel",
               description: "Understand any shell command with AI-powered explanations, safety warnings, and comprehensive documentation.",
@@ -109,7 +105,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           {children}
         </ThemeProvider>
-        <Analytics/>
+        <Analytics />
       </body>
     </html>
   )
