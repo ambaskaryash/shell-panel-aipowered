@@ -41,7 +41,7 @@ AI ShellPanel is an intelligent web application that provides detailed explanati
 
 ### Installation
 
-```bash
+\`\`\`bash
 # Clone the repository
 git clone https://github.com/ambaskaryash/shell-panel-aipowered.git
 cd shell-panel-aipowered
@@ -55,7 +55,7 @@ cp .env.example .env.local
 
 # Start development server
 npm run dev
-```
+\`\`\`
 
 Visit `http://localhost:3000` to see the application running.
 
@@ -63,46 +63,46 @@ Visit `http://localhost:3000` to see the application running.
 
 Create a `.env.local` file in the root directory:
 
-```env
+\`\`\`env
 PERPLEXITY_API_KEY=your_perplexity_api_key_here
-```
+\`\`\`
 
 ## 🎯 Usage Examples
 
 ### Safe Commands
-```bash
+\`\`\`bash
 ls -la                    # List files with detailed information
 grep -r "pattern" .       # Search for text recursively
 tar -xzvf archive.tar.gz  # Extract compressed archive
-```
+\`\`\`
 
 ### Commands with Warnings
-```bash
+\`\`\`bash
 rm -rf /tmp/*            # Shows safety warning about deletion
 sudo systemctl restart   # Warns about system changes
 chmod 777 sensitive.txt  # Flags security implications
-```
+\`\`\`
 
 ## 🔧 API Endpoints
 
 ### Command Analysis
-```http
+\`\`\`http
 POST /api/explain
 Content-Type: application/json
 
 {
   "command": "tar -xzvf archive.tar.gz"
 }
-```
+\`\`\`
 
 ### Visitor Statistics
-```http
+\`\`\`http
 GET /api/visitors
 # Returns: {"uniqueVisitors": 42}
 
 POST /api/visitors
 # Registers new unique visitor (IP-based)
-```
+\`\`\`
 
 ## 🛠️ Tech Stack
 
@@ -115,7 +115,7 @@ POST /api/visitors
 
 ## 📁 Project Structure
 
-```
+\`\`\`
 shell-panel-aipowered/
 ├── app/                    # Next.js App Router
 │   ├── api/               # API routes
@@ -133,7 +133,7 @@ shell-panel-aipowered/
 │   └── visitor-counter.ts # Client-side visitor tracking
 ├── public/             # Static assets
 └── visitor-data.json   # Server-side visitor storage
-```
+\`\`\`
 
 ## 🚀 Deployment
 

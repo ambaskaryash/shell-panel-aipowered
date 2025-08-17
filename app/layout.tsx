@@ -75,6 +75,7 @@ export const metadata: Metadata = {
   },
   category: "technology",
   classification: "Development Tools",
+    generator: 'v0.app'
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

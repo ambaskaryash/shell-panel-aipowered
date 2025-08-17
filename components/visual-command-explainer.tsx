@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Copy } from "lucide-react"
 
-interface CommandPart {
+export interface CommandPart {
   text: string
   type: "command" | "option" | "argument" | "pipe" | "redirect" | "operator"
   explanation: string
@@ -163,9 +163,9 @@ export function VisualCommandExplainer({ command, parts, onCopy }: VisualCommand
                   }}
                 >
                   <div
-                      className="absolute -top-2 left-3 sm:left-4 w-3 h-3 sm:w-4 sm:h-4 rounded-full border-2 border-slate-800"
-                      style={{ backgroundColor: colors[index % colors.length] }}
-                    />
+                    className="absolute -top-2 left-3 sm:left-4 w-3 h-3 sm:w-4 sm:h-4 rounded-full border-2 border-slate-800"
+                    style={{ backgroundColor: colors[index % colors.length] }}
+                  />
 
                   <div className="space-y-2 sm:space-y-3">
                     <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
@@ -179,7 +179,10 @@ export function VisualCommandExplainer({ command, parts, onCopy }: VisualCommand
                       >
                         {part.text}
                       </code>
-                      <Badge variant="outline" className="text-xs border-slate-600 text-slate-400 bg-slate-700 self-start sm:self-center">
+                      <Badge
+                        variant="outline"
+                        className="text-xs border-slate-600 text-slate-400 bg-slate-700 self-start sm:self-center"
+                      >
                         {part.type}
                       </Badge>
                     </div>

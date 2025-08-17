@@ -57,7 +57,7 @@ AI ShellPanel is an intelligent web application that provides detailed explanati
 - Perplexity API key (for AI explanations)
 
 ### Quick Start
-```bash
+\`\`\`bash
 # Clone the repository
 git clone https://github.com/ambaskaryash/shell-panel-aipowered.git
 cd shell-panel-aipowered
@@ -73,7 +73,7 @@ cp .env.example .env.local
 
 # Start development server
 npm run dev
-```
+\`\`\`
 
 Visit `http://localhost:3000` to see the application running.
 
@@ -82,34 +82,34 @@ Visit `http://localhost:3000` to see the application running.
 ### Local Development
 
 1. **Clone the repository**
-   ```bash
+   \`\`\`bash
    git clone https://github.com/ambaskaryash/shell-panel-aipowered.git
    cd shell-panel-aipowered
-   ```
+   \`\`\`
 
 2. **Install dependencies**
-   ```bash
+   \`\`\`bash
    npm install
    # or
    yarn install
    # or
    pnpm install
-   ```
+   \`\`\`
 
 3. **Environment Setup**
    Create a `.env.local` file in the root directory:
-   ```env
+   \`\`\`env
    PERPLEXITY_API_KEY=your_perplexity_api_key_here
-   ```
+   \`\`\`
 
 4. **Run the development server**
-   ```bash
+   \`\`\`bash
    npm run dev
    # or
    yarn dev
    # or
    pnpm dev
-   ```
+   \`\`\`
 
 ### Production Deployment
 
@@ -169,14 +169,14 @@ The AI provides:
 Explain a shell command using AI.
 
 **Request:**
-```json
+\`\`\`json
 {
   "command": "tar -xzvf archive.tar.gz"
 }
-```
+\`\`\`
 
 **Response:**
-```json
+\`\`\`json
 {
   "overall_explanation": "Extracts files from a gzip-compressed tar archive...",
   "component_breakdown": [
@@ -188,27 +188,27 @@ Explain a shell command using AI.
   "safety_notes": "This command is safe for extracting archives",
   "examples": [...]
 }
-```
+\`\`\`
 
 #### GET /api/visitors
 Get the current unique visitor count.
 
 **Response:**
-```json
+\`\`\`json
 {
   "uniqueVisitors": 42
 }
-```
+\`\`\`
 
 #### POST /api/visitors
 Register a new unique visitor (IP-based).
 
 **Response:**
-```json
+\`\`\`json
 {
   "uniqueVisitors": 43
 }
-```
+\`\`\`
 
 ## 🔒 Security
 
@@ -241,21 +241,21 @@ The application implements multi-layer security:
 ### Environment-Specific Configuration
 
 #### Production
-```bash
+\`\`\`bash
 npm run build
 npm start
-```
+\`\`\`
 
 #### Development
-```bash
+\`\`\`bash
 npm run dev
-```
+\`\`\`
 
 #### Testing
-```bash
+\`\`\`bash
 npm run test
 npm run lint
-```
+\`\`\`
 
 ### Performance Optimization
 - **Static Generation**: Optimized for Next.js static generation
@@ -304,9 +304,9 @@ npm run lint
 
 ### Debug Mode
 Enable debug logging by setting:
-```bash
+\`\`\`bash
 DEBUG=shell-panel:* npm run dev
-```
+\`\`\`
 
 ### Support
 - **GitHub Issues**: [Report bugs here](https://github.com/yourusername/shell-panel-aipowered/issues)

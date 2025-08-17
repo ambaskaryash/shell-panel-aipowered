@@ -10,9 +10,8 @@ import { Search, Terminal, Play, BookOpen, AlertTriangle, Sparkles } from "lucid
 import { ThemeToggle } from "@/components/theme-toggle"
 import { VisualCommandExplainer } from "@/components/visual-command-explainer"
 import { CommandHistory } from "@/components/command-history"
-import { SyntaxHighlighter } from '@/components/syntax-highlighter'
-import { CommandTester } from '@/components/command-tester'
-import { CommandTemplates } from '@/components/command-templates'
+import { SyntaxHighlighter } from "@/components/syntax-highlighter"
+import { CommandTester } from "@/components/command-tester"
 import VisitorCounterDisplay from "@/components/visitor-counter"
 import { commandHistory } from "@/lib/command-history"
 
@@ -48,11 +47,11 @@ export default function ShellExplainer() {
     "docker run -d -p 8080:80 --name myapp nginx:latest",
     "sudo rm -rf /var/log/*",
     "chmod 755 script.sh && ./script.sh",
-    "ls -la | grep \".txt\"",
-    "find /var/log -name \"*.log\" -mtime -7",
+    'ls -la | grep ".txt"',
+    'find /var/log -name "*.log" -mtime -7',
     "ps aux | grep node | awk '{print $2}'",
     "tar -czf backup.tar.gz /home/user/documents",
-    "grep -r \"pattern\" . --include=\"*.py\"",
+    'grep -r "pattern" . --include="*.py"',
     "git log --oneline -n 10",
   ]
 
@@ -88,8 +87,8 @@ export default function ShellExplainer() {
         command: command.trim(),
         parts: data.parts || [],
         overall_explanation: data.overall_explanation,
-        safety_notes: data.safety_notes || '',
-        examples: data.examples || []
+        safety_notes: data.safety_notes || "",
+        examples: data.examples || [],
       })
     } catch (err) {
       setError(err instanceof Error ? err.message : "An error occurred while analyzing the command")
@@ -152,7 +151,7 @@ export default function ShellExplainer() {
             AI Shell Command Explainer & Analyzer
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Understand any shell command with AI-powered explanations, safety warnings, and comprehensive documentation. 
+            Understand any shell command with AI-powered explanations, safety warnings, and comprehensive documentation.
             Perfect for learning Linux commands, bash scripting, and terminal usage.
           </p>
         </header>
@@ -183,7 +182,7 @@ export default function ShellExplainer() {
                 </ScrollArea>
               </CardContent>
             </Card>
-            
+
             <Card>
               <CardHeader>
                 <CardTitle className="text-lg">Command Categories</CardTitle>
@@ -207,20 +206,10 @@ export default function ShellExplainer() {
               </CardContent>
             </Card>
 
-            <CommandHistory 
+            <CommandHistory
               onSelectCommand={(item) => {
                 setCommand(item.command)
                 setSelectedExample(item.command)
-                setError(null)
-                setAiExplanation(null)
-                setParsedCommand([])
-              }}
-            />
-            
-            <CommandTemplates 
-              onUseTemplate={(templateCommand) => {
-                setCommand(templateCommand)
-                setSelectedExample(templateCommand)
                 setError(null)
                 setAiExplanation(null)
                 setParsedCommand([])
@@ -269,10 +258,7 @@ export default function ShellExplainer() {
                       <p className="text-xs text-muted-foreground mb-1">Syntax Preview:</p>
                       <SyntaxHighlighter command={command} />
                     </div>
-                    <CommandTester 
-                      command={command} 
-                      onUseAlternative={(altCommand) => setCommand(altCommand)}
-                    />
+                    <CommandTester command={command} onUseAlternative={(altCommand) => setCommand(altCommand)} />
                   </div>
                 )}
                 {!process.env.NEXT_PUBLIC_PERPLEXITY_CONFIGURED && (
@@ -369,10 +355,13 @@ export default function ShellExplainer() {
                       <Play className="w-4 h-4 mr-2" />
                       Try Example
                     </Button>
-                    <Button 
-                      variant="outline" 
+                    <Button
+                      variant="outline"
                       className="w-full sm:w-auto bg-transparent"
-                      onClick={() => window.open('https://github.com/ambaskaryash/shell-panel-aipowered/wiki', '_blank')}>  
+                      onClick={() =>
+                        window.open("https://github.com/ambaskaryash/shell-panel-aipowered/wiki", "_blank")
+                      }
+                    >
                       <BookOpen className="w-4 h-4 mr-2" />
                       Learn More
                     </Button>
@@ -382,19 +371,17 @@ export default function ShellExplainer() {
             )}
           </div>
         </div>
-        
+
         <section className="mt-12">
           <FAQ />
         </section>
 
         <footer className="mt-12 text-center text-sm text-muted-foreground">
           <p>
-            <strong>AI ShellPanel</strong> - Your AI-powered shell command companion. 
-            Learn Linux commands, understand bash scripting, and master the terminal with confidence.
+            <strong>AI ShellPanel</strong> - Your AI-powered shell command companion. Learn Linux commands, understand
+            bash scripting, and master the terminal with confidence.
           </p>
-          <p className="mt-2">
-            Built with Next.js, TypeScript, and AI technology for developers, by developers.
-          </p>
+          <p className="mt-2">Built with Next.js, TypeScript, and AI technology for developers, by developers.</p>
           <div className="mt-4">
             <VisitorCounterDisplay />
           </div>
@@ -412,19 +399,26 @@ function FAQ() {
       </CardHeader>
       <CardContent className="space-y-4 text-sm text-muted-foreground">
         <div>
-          <strong>Q: How accurate are the AI explanations?</strong><br/>
-          A: The AI provides highly accurate explanations based on extensive training data, but always cross-reference with official documentation for critical operations.
+          <strong>Q: How accurate are the AI explanations?</strong>
+          <br />
+          A: The AI provides highly accurate explanations based on extensive training data, but always cross-reference
+          with official documentation for critical operations.
         </div>
         <div>
-          <strong>Q: Does this work with Windows PowerShell commands?</strong><br/>
-          A: Currently optimized for Unix/Linux shell commands (bash, zsh, sh). PowerShell support is planned for future updates.
+          <strong>Q: Does this work with Windows PowerShell commands?</strong>
+          <br />
+          A: Currently optimized for Unix/Linux shell commands (bash, zsh, sh). PowerShell support is planned for future
+          updates.
         </div>
         <div>
-          <strong>Q: Are dangerous commands flagged?</strong><br/>
-          A: Yes! The AI automatically identifies potentially destructive commands (like rm -rf) and provides prominent safety warnings.
+          <strong>Q: Are dangerous commands flagged?</strong>
+          <br />
+          A: Yes! The AI automatically identifies potentially destructive commands (like rm -rf) and provides prominent
+          safety warnings.
         </div>
         <div>
-          <strong>Q: Can I use this offline?</strong><br/>
+          <strong>Q: Can I use this offline?</strong>
+          <br />
           A: No, real-time AI analysis requires an internet connection to query the Perplexity API.
         </div>
       </CardContent>
