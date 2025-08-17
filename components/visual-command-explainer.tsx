@@ -63,9 +63,9 @@ export function VisualCommandExplainer({ command, parts, onCopy }: VisualCommand
         const containerRect = container.getBoundingClientRect()
 
         const x1 = spanRect.left + spanRect.width / 2 - containerRect.left
-        const y1 = spanRect.bottom - containerRect.top + 8
-        const x2 = boxRect.left + 12 - containerRect.left
-        const y2 = boxRect.top + 12 - containerRect.left
+        const y1 = spanRect.bottom - containerRect.top + 4
+        const x2 = boxRect.left + 8 - containerRect.left
+        const y2 = boxRect.top + 8 - containerRect.top
 
         newConnections.push({
           x1,
@@ -129,8 +129,8 @@ export function VisualCommandExplainer({ command, parts, onCopy }: VisualCommand
               <g key={index}>
                 <path
                   d={`M ${connection.x1} ${connection.y1} 
-                      C ${connection.x1} ${connection.y1 + 40} 
-                        ${connection.x2 - 30} ${connection.y2 - 30} 
+                      C ${connection.x1} ${connection.y1 + 30} 
+                        ${connection.x2} ${connection.y2 - 30} 
                         ${connection.x2} ${connection.y2}`}
                   stroke={connection.color}
                   strokeWidth="2"
