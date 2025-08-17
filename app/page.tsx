@@ -9,7 +9,12 @@ import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Search, Terminal, Play, BookOpen, AlertTriangle, Sparkles } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { VisualCommandExplainer } from "@/components/visual-command-explainer"
+import { CommandHistory } from "@/components/command-history"
+import { SyntaxHighlighter } from '@/components/syntax-highlighter'
+import { CommandTester } from '@/components/command-tester'
+import { CommandTemplates } from '@/components/command-templates'
 import VisitorCounterDisplay from "@/components/visitor-counter"
+import { commandHistory } from "@/lib/command-history"
 
 interface CommandPart {
   text: string
@@ -77,6 +82,15 @@ export default function ShellExplainer() {
 
       setAiExplanation(data)
       setParsedCommand(data.parts || [])
+
+      // Save to command history
+      commandHistory.addCommand({
+        command: command.trim(),
+        parts: data.parts || [],
+        overall_explanation: data.overall_explanation,
+        safety_notes: data.safety_notes || '',
+        examples: data.examples || []
+      })
     } catch (err) {
       setError(err instanceof Error ? err.message : "An error occurred while analyzing the command")
     } finally {
@@ -159,11 +173,11 @@ export default function ShellExplainer() {
                     <Button
                       key={index}
                       variant={selectedExample === example ? "default" : "ghost"}
-                      className="w-full justify-start text-left h-auto p-2 sm:p-3 mb-2"
+                      className="w-full justify-start text-left h-auto p-3 sm:p-3 mb-2 touch-target text-sm"
                       onClick={() => handleExampleClick(example)}
                       title={`Analyze: ${example}`}
                     >
-                      <code className="text-xs font-mono break-all">{example}</code>
+                      <code className="text-xs font-mono break-all text-selectable">{example}</code>
                     </Button>
                   ))}
                 </ScrollArea>
@@ -192,6 +206,26 @@ export default function ShellExplainer() {
                 </div>
               </CardContent>
             </Card>
+
+            <CommandHistory 
+              onSelectCommand={(item) => {
+                setCommand(item.command)
+                setSelectedExample(item.command)
+                setError(null)
+                setAiExplanation(null)
+                setParsedCommand([])
+              }}
+            />
+            
+            <CommandTemplates 
+              onUseTemplate={(templateCommand) => {
+                setCommand(templateCommand)
+                setSelectedExample(templateCommand)
+                setError(null)
+                setAiExplanation(null)
+                setParsedCommand([])
+              }}
+            />
           </aside>
 
           {/* Main Content */}
@@ -205,7 +239,7 @@ export default function ShellExplainer() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="flex flex-col sm:flex-row gap-2">
+                <div className="flex flex-col sm:flex-row gap-3">
                   <div className="relative flex-1">
                     <Terminal className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                     <Input
@@ -213,14 +247,14 @@ export default function ShellExplainer() {
                       value={command}
                       onChange={(e) => setCommand(e.target.value)}
                       placeholder="e.g., tar -xzvf archive.tar.gz"
-                      className="pl-10 font-mono text-sm"
+                      className="pl-10 font-mono text-base sm:text-sm h-12 sm:h-10 touch-target"
                       onKeyDown={(e) => e.key === "Enter" && analyzeCommand()}
                     />
                   </div>
                   <Button
                     onClick={analyzeCommand}
                     disabled={!command.trim() || isAnalyzing}
-                    className="w-full sm:w-auto"
+                    className="w-full sm:w-auto h-12 sm:h-10 touch-target"
                   >
                     {isAnalyzing ? (
                       <div className="w-4 h-4 border-2 border-primary-foreground border-t-transparent rounded-full animate-spin" />
@@ -229,6 +263,18 @@ export default function ShellExplainer() {
                     )}
                   </Button>
                 </div>
+                {command && (
+                  <div className="mt-3 space-y-3">
+                    <div className="p-3 bg-muted/50 rounded-lg border">
+                      <p className="text-xs text-muted-foreground mb-1">Syntax Preview:</p>
+                      <SyntaxHighlighter command={command} />
+                    </div>
+                    <CommandTester 
+                      command={command} 
+                      onUseAlternative={(altCommand) => setCommand(altCommand)}
+                    />
+                  </div>
+                )}
                 {!process.env.NEXT_PUBLIC_PERPLEXITY_CONFIGURED && (
                   <Alert className="mt-4">
                     <AlertTriangle className="h-4 w-4" />

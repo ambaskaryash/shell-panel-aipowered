@@ -150,4 +150,43 @@
   .focus-visible {
     @apply outline-2 outline-offset-2 outline-ring;
   }
+
+  /* Mobile touch improvements */
+  @media (max-width: 768px) {
+    /* Prevent zoom on input focus */
+    input[type="text"], input[type="search"], textarea {
+      font-size: 16px !important;
+    }
+    
+    /* Improve touch targets */
+    button, [role="button"], [role="tab"], .touch-target {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    
+    /* Reduce tap delay */
+    * {
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+    
+    /* Allow text selection in specific areas */
+    .text-selectable, code, pre, .font-mono {
+      -webkit-user-select: text;
+      user-select: text;
+    }
+    
+    /* Smooth scrolling */
+    html {
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Improve button feedback */
+    button:active, [role="button"]:active {
+      transform: scale(0.98);
+      transition: transform 0.1s ease;
+    }
+  }
 }
