@@ -3,10 +3,11 @@ import type { Metadata } from "next"
 import { DM_Sans } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import { Analytics } from '@vercel/analytics/next'
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
-  display: "swap",
+  display: "swap",+
   variable: "--font-dm-sans",
 })
 
@@ -108,6 +109,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           {children}
         </ThemeProvider>
+        <Analytics/>
       </body>
     </html>
   )
