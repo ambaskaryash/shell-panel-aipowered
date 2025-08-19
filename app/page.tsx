@@ -1,19 +1,19 @@
 "use client"
 
-import { useState, useRef, useEffect } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ScrollArea } from "@/components/ui/scroll-area"
-import { Alert, AlertDescription } from "@/components/ui/alert"
-import { Search, Terminal, Play, BookOpen, AlertTriangle, Sparkles } from "lucide-react"
-import { ThemeToggle } from "@/components/theme-toggle"
-import { VisualCommandExplainer } from "@/components/visual-command-explainer"
 import { CommandHistory } from "@/components/command-history"
-import { SyntaxHighlighter } from "@/components/syntax-highlighter"
 import { CommandTester } from "@/components/command-tester"
+import { SyntaxHighlighter } from "@/components/syntax-highlighter"
+import { ThemeToggle } from "@/components/theme-toggle"
+import { Alert, AlertDescription } from "@/components/ui/alert"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { ScrollArea } from "@/components/ui/scroll-area"
 import VisitorCounterDisplay from "@/components/visitor-counter"
+import { VisualCommandExplainer } from "@/components/visual-command-explainer"
 import { commandHistory } from "@/lib/command-history"
+import { AlertTriangle, BookOpen, Play, Search, Sparkles, Terminal } from "lucide-react"
+import { useEffect, useRef, useState } from "react"
 
 interface CommandPart {
   text: string
@@ -148,7 +148,7 @@ export default function ShellExplainer() {
       <div className="container mx-auto px-4 py-4 sm:py-8">
         <header className="text-center mb-8">
           <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            AI Shell Command Explainer & Analyzer
+            Explain Shell Commands with AI
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Understand any shell command with AI-powered explanations, safety warnings, and comprehensive documentation.
