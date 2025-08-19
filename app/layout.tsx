@@ -1,9 +1,13 @@
-import type React from "react"
+import { ThemeProvider } from "@/components/theme-provider"
+import { Analytics } from "@vercel/analytics/next"
 import type { Metadata } from "next"
 import { DM_Sans } from "next/font/google"
+import type React from "react"
 import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
-  import { Analytics } from '@vercel/analytics/next'
+
+const SITE_NAME = "AI ShellPanel"
+const SITE_URL = "https://shellpanel.novitaswebworks.in"
+const OG_IMAGE = `${SITE_URL}/og-image.png`
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -12,6 +16,7 @@ const dmSans = DM_Sans({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "AI ShellPanel - AI-Powered Shell Command Analysis & Explainer",
   description:
     "Understand any shell command with AI-powered explanations, safety warnings, and comprehensive documentation. Learn Linux commands, bash scripting, and terminal usage with instant AI assistance.",
@@ -30,9 +35,9 @@ export const metadata: Metadata = {
     "Linux terminal help",
     "bash command explanation",
     "AI code analysis",
-    "shell command documentation"
+    "shell command documentation",
   ],
-  authors: [{ name: "AI ShellPanel Team", url: "https://explainshell-prodapp.vercel.app/" }],
+  authors: [{ name: "AI ShellPanel Team", url: SITE_URL }],
   creator: "AI ShellPanel",
   publisher: "AI ShellPanel",
   robots: "index, follow",
@@ -40,11 +45,11 @@ export const metadata: Metadata = {
     title: "AI ShellPanel - AI-Powered Shell Command Analysis",
     description:
       "Understand any shell command with AI-powered explanations, safety warnings, and comprehensive documentation. Perfect for developers learning Linux commands.",
-    url: "https://explainshell-prodapp.vercel.app/",
-    siteName: "AI ShellPanel",
+    url: SITE_URL,
+    siteName: SITE_NAME,
     images: [
       {
-        url: "https://explainshell-prodapp.vercel.app/og-image.png",
+        url: OG_IMAGE,
         width: 1200,
         height: 630,
         alt: "AI ShellPanel - Shell Command Analysis Tool",
@@ -58,8 +63,8 @@ export const metadata: Metadata = {
     title: "AI ShellPanel - AI-Powered Shell Command Analysis",
     description:
       "Understand any shell command with AI-powered explanations, safety warnings, and comprehensive documentation.",
-    images: ["https://explainshell-prodapp.vercel.app/og-image.png"],
-    creator: "@shellpanel_ai",
+    images: [OG_IMAGE],
+    creator: "@shellpanel_ai", // Update if different or remove if not in use
   },
   icons: {
     icon: "/favicon.ico",
@@ -67,15 +72,15 @@ export const metadata: Metadata = {
   },
   manifest: "/site.webmanifest",
   alternates: {
-    canonical: "https://explainshell-prodapp.vercel.app",
+    canonical: SITE_URL,
   },
   verification: {
-    google: "google-site-verification-code",
-    yandex: "yandex-verification-code",
+    google: "google-site-verification-code", // replace
+    yandex: "yandex-verification-code", // replace
   },
   category: "technology",
   classification: "Development Tools",
-    generator: 'v0.app'
+  generator: "v0.app",
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -84,21 +89,41 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <script
           type="application/ld+json"
+          // WebApplication schema aligned with new domain
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebApplication",
               name: "AI ShellPanel",
-              description: "Understand any shell command with AI-powered explanations, safety warnings, and comprehensive documentation.",
-              url: "https://explainshell-prodapp.vercel.app",
+              description:
+                "Understand any shell command with AI-powered explanations, safety warnings, and comprehensive documentation.",
+              url: SITE_URL,
               applicationCategory: "DeveloperApplication",
               operatingSystem: "Any",
               offers: {
                 "@type": "Offer",
                 price: "0",
-                priceCurrency: "USD"
-              }
-            })
+                priceCurrency: "USD",
+              },
+              publisher: {
+                "@type": "Organization",
+                name: "AI ShellPanel",
+                url: SITE_URL,
+              },
+            }),
+          }}
+        />
+        {/* Optional: Basic Organization schema for richer branding */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "AI ShellPanel",
+              url: SITE_URL,
+              logo: `${SITE_URL}/logo.png`, // add this asset or remove this field
+            }),
           }}
         />
       </head>
