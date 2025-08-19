@@ -1,0 +1,32 @@
+name = "shellpanel-worker"
+main = ".vercel/output/functions/worker.js"
+compatibility_date = "2025-08-19"
+# Optionally pin features based on your Next.js runtime needs:
+# compatibility_flags = ["nodejs_compat"]
+
+# If binding KV/R2/D1/etc. add here:
+# [[kv_namespaces]]
+# binding = "KV"
+# id = "xxxx"
+
+# [vars]
+# NODE_ENV = "production"
+"@cloudflare/next-on-pages": "latest",
+     "@cloudflare/workers-types": "latest",
+     "@vercel/ai": "latest",
+     "@vercel/commerce": "latest",
+     "@vercel/commerce-ui": "latest",
+     "@vercel/commerce-ui-next": "latest",
+     "@vercel/commerce-ui-react": "latest",
+     "@vercel/commerce-ui-tailwindcss": "latest",
+     "@vercel/commerce-ui-utils": "latest",
+     "@vercel/commerce-ui-vue": "latest",
+     "@vercel/commerce-ui-vue-next": "latest",
+     "@vercel/commerce-ui-vue-react": "latest",
+     "@vercel/commerce-ui-vue-tailwindcss": "latest",
+     "@vercel/commerce-ui-vue-utils": "latest"
+   },
+   "devDependencies": {
+     "@cloudflare/workers-types": "^4.20240819.0"
+   }
+ }

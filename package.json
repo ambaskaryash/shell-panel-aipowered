@@ -6,7 +6,10 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "cf:build": "npx @cloudflare/next-on-pages",
+    "cf:dev": "wrangler dev .vercel/output/functions/worker.js",
+    "cf:deploy": "wrangler deploy .vercel/output/functions/worker.js"
   },
   "dependencies": {
     "@ai-sdk/groq": "latest",
