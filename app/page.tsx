@@ -134,7 +134,7 @@ export default function ShellExplainer() {
                 />
               </div>
               <div>
-                <h1 className="text-xl sm:text-2xl font-bold text-foreground">AI ShellPanel</h1>
+                <span className="text-xl sm:text-2xl font-bold text-foreground">AI ShellPanel</span>
                 <p className="text-xs sm:text-sm text-muted-foreground">AI-Powered Shell Command Analysis</p>
               </div>
             </div>
@@ -145,23 +145,23 @@ export default function ShellExplainer() {
         </div>
       </header>
 
-      <div className="container mx-auto px-4 py-4 sm:py-8">
-        <header className="text-center mb-8">
-          <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+      <main className="container mx-auto px-4 py-4 sm:py-8">
+        <header className="text-center mb-12">
+          <h1 className="text-4xl sm:text-5xl font-extrabold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent tracking-tight">
             Explain Shell Commands with AI
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Understand any shell command with AI-powered explanations, safety warnings, and comprehensive documentation.
-            Perfect for learning Linux commands, bash scripting, and terminal usage.
+            Perfect for learning Linux commands, bash scripting, and master the terminal.
           </p>
         </header>
         <div className="grid grid-cols-1 xl:grid-cols-4 gap-4 sm:gap-8">
           {/* Sidebar */}
-          <aside className="xl:col-span-1 order-2 xl:order-1 space-y-4">
-            <Card>
+          <aside className="xl:col-span-1 order-2 xl:order-1 space-y-4 animate-reveal">
+            <Card className="glass-card">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-lg">
-                  <BookOpen className="w-5 h-5" />
+                  <BookOpen className="w-5 h-5 text-primary" />
                   Popular Commands
                 </CardTitle>
                 <CardDescription className="text-sm">Click any example to analyze it with AI</CardDescription>
@@ -183,7 +183,7 @@ export default function ShellExplainer() {
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="glass-card">
               <CardHeader>
                 <CardTitle className="text-lg">Command Categories</CardTitle>
                 <CardDescription className="text-sm">Learn by category</CardDescription>
@@ -218,12 +218,14 @@ export default function ShellExplainer() {
           </aside>
 
           {/* Main Content */}
-          <div className="xl:col-span-3 space-y-4 sm:space-y-6 order-1 xl:order-2">
+          <div className="xl:col-span-3 space-y-4 sm:space-y-6 order-1 xl:order-2 animate-reveal" style={{ animationDelay: '0.1s' }}>
             {/* Command Input */}
-            <Card>
+            <Card className="glass-card border-primary/20 shadow-lg shadow-primary/5">
               <CardHeader>
-                <CardTitle className="text-lg sm:text-xl">Enter Shell Command</CardTitle>
-                <CardDescription className="text-sm">
+                <CardTitle className="text-lg sm:text-xl flex items-center gap-2">
+                  <Terminal className="w-5 h-5 text-primary" />
+                  Enter Shell Command
+                </CardTitle>
                   Type any shell command and our AI will provide detailed explanations
                 </CardDescription>
               </CardHeader>
@@ -286,11 +288,11 @@ export default function ShellExplainer() {
               <>
                 <VisualCommandExplainer command={command} parts={parsedCommand} onCopy={copyToClipboard} />
 
-                <Card>
+                <Card className="glass-card border-primary/20 animate-reveal">
                   <CardHeader>
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                       <CardTitle className="flex items-center gap-2 text-lg sm:text-xl">
-                        <Sparkles className="w-5 h-5" />
+                        <Sparkles className="w-5 h-5 text-secondary animate-pulse" />
                         AI Command Analysis
                       </CardTitle>
                     </div>
@@ -398,28 +400,23 @@ function FAQ() {
         <CardTitle className="text-xl">Frequently Asked Questions</CardTitle>
       </CardHeader>
       <CardContent className="space-y-4 text-sm text-muted-foreground">
-        <div>
-          <strong>Q: How accurate are the AI explanations?</strong>
-          <br />
-          A: The AI provides highly accurate explanations based on extensive training data, but always cross-reference
-          with official documentation for critical operations.
-        </div>
-        <div>
-          <strong>Q: Does this work with Windows PowerShell commands?</strong>
-          <br />
-          A: Currently optimized for Unix/Linux shell commands (bash, zsh, sh). PowerShell support is planned for future
-          updates.
-        </div>
-        <div>
-          <strong>Q: Are dangerous commands flagged?</strong>
-          <br />
-          A: Yes! The AI automatically identifies potentially destructive commands (like rm -rf) and provides prominent
-          safety warnings.
-        </div>
-        <div>
-          <strong>Q: Can I use this offline?</strong>
-          <br />
-          A: No, real-time AI analysis requires an internet connection to query the Groq AI API.
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="space-y-2">
+            <h3 className="font-semibold text-foreground">How accurate are the AI explanations?</h3>
+            <p>The AI provides highly accurate explanations based on extensive training data, but always cross-reference with official documentation for critical operations.</p>
+          </div>
+          <div className="space-y-2">
+            <h3 className="font-semibold text-foreground">Does this work with Windows PowerShell?</h3>
+            <p>Currently optimized for Unix/Linux shell commands (bash, zsh, sh). PowerShell support is planned for future updates.</p>
+          </div>
+          <div className="space-y-2">
+            <h3 className="font-semibold text-foreground">Are dangerous commands flagged?</h3>
+            <p>Yes! The AI automatically identifies potentially destructive commands (like <code>rm -rf</code>) and provides prominent safety warnings.</p>
+          </div>
+          <div className="space-y-2">
+            <h3 className="font-semibold text-foreground">Can I use this offline?</h3>
+            <p>No, real-time AI analysis requires an internet connection to query our secure AI API infrastructure.</p>
+          </div>
         </div>
       </CardContent>
     </Card>

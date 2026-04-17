@@ -12,7 +12,7 @@ Disallow: /_next/
 Disallow: /static/
 
 # Sitemap location
-Sitemap: https://explainshell-prodapp.vercel.app/sitemap.xml
+Sitemap: https://shellpanel.novitaswebworks.in/sitemap.xml
 
 # Crawl delay for bots
 Crawl-delay: 1

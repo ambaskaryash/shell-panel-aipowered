@@ -41,9 +41,9 @@ export default function VisitorCounterDisplay() {
 
   if (loading) {
     return (
-      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-        <Users className="w-4 h-4" />
-        <span>Loading visits...</span>
+      <div className="flex items-center gap-2 text-sm text-muted-foreground shimmer py-1 px-2 rounded-md bg-muted/30">
+        <Users className="w-4 h-4 animate-pulse" />
+        <span>Loading stats...</span>
       </div>
     )
   }

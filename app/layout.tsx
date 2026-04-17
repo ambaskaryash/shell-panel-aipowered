@@ -127,8 +127,8 @@ export const metadata: Metadata = {
     canonical: "/", // resolves via metadataBase to SITE_URL
   },
   verification: {
-    google: "google-site-verification-code", // replace
-    yandex: "yandex-verification-code", // replace
+    google: "",
+    yandex: "",
   },
   category: "technology",
   classification: "Development Tools"
@@ -185,7 +185,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               "@type": "Organization",
               name: SITE_NAME,
               url: SITE_URL,
-              logo: `${SITE_URL}/logo.png`, // add asset or remove
+              logo: `${SITE_URL}/logo.png`,
             }),
           }}
         />
