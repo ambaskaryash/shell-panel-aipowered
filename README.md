@@ -54,7 +54,7 @@ git clone https://github.com/ambaskaryash/shell-panel-aipowered.git
 cd shell-panel-aipowered
 
 # Install dependencies (cleaned and optimized)
-npm install
+pnpm install
 
 # Configure Environment
 cp .env.example .env.local
@@ -70,7 +70,7 @@ GROQ_API_KEY=gsk_your_key_here
 ### 🏃 Running Locally
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 Navigate to `http://localhost:3000`.
 
