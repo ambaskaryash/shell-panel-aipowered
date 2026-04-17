@@ -226,6 +226,7 @@ export default function ShellExplainer() {
                   <Terminal className="w-5 h-5 text-primary" />
                   Enter Shell Command
                 </CardTitle>
+                <CardDescription className="text-sm">
                   Type any shell command and our AI will provide detailed explanations
                 </CardDescription>
               </CardHeader>
@@ -374,21 +375,23 @@ export default function ShellExplainer() {
           </div>
         </div>
 
-        <section className="mt-12">
+        <section className="mt-16">
           <FAQ />
         </section>
 
-        <footer className="mt-12 text-center text-sm text-muted-foreground">
-          <p>
-            <strong>AI ShellPanel</strong> - Your AI-powered shell command companion. Learn Linux commands, understand
-            bash scripting, and master the terminal with confidence.
-          </p>
-          <p className="mt-2">Built with Next.js, TypeScript, and AI technology for developers, by developers.</p>
-          <div className="mt-4">
-            <VisitorCounterDisplay />
+        <footer className="mt-20 py-10 border-t text-center text-sm text-muted-foreground bg-muted/20">
+          <div className="max-w-2xl mx-auto space-y-4 px-4">
+            <p className="leading-relaxed">
+              <strong className="text-foreground">AI ShellPanel</strong> - Your premium AI-powered shell command companion. 
+              Master Linux terminal usage with clinical precision and safety.
+            </p>
+            <p>Built with Next.js, TypeScript, and state-of-the-art AI technology.</p>
+            <div className="flex justify-center pt-2">
+              <VisitorCounterDisplay />
+            </div>
           </div>
         </footer>
-      </div>
+      </main>
     </div>
   )
 }
