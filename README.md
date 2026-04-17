@@ -1,212 +1,131 @@
-# 🚀 AI ShellPanel - AI-Powered Shell Command Analysis
+# 🚀 ShellPanel AI - High-Performance Shell Command Explainer
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-green.svg)](https://explainshell-prodapp.vercel.app/)
-[![Next.js](https://img.shields.io/badge/Next.js-15-black.svg)](https://nextjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue.svg)](https://www.typescriptlang.org/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+<div align="center">
 
-> **Your AI-powered companion for understanding shell commands safely and effectively**
+![Header Image](https://images.unsplash.com/photo-1629654297299-c8506221ca97?q=80&w=1000&auto=format&fit=crop)
 
-AI ShellPanel is an intelligent web application that provides detailed explanations and analysis of shell commands using cutting-edge AI technology. Built with Next.js and TypeScript, it helps developers understand complex Linux/Unix commands, learn shell scripting, and master terminal operations with confidence.
+[![Next.js](https://img.shields.io/badge/Next.js-15.5-black.svg?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue.svg?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
+[![Groq](https://img.shields.io/badge/AI_Powered_By-Groq_Llama_3.3-orange.svg?style=for-the-badge)](https://groq.com/)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 
-## ✨ Features
+**Demystify complex terminal commands with lightning-fast AI analysis.**
 
-### 🧠 AI-Powered Intelligence
-- **Real-time Command Analysis**: Get instant explanations for any shell command
-- **Visual Command Breakdown**: Interactive visualization of command components
-- **Educational Examples**: Learn with similar command examples and use cases
+[Explore the Code](#-tech-stack) • [Quick Start](#-quick-start) • [Security](#-security-first)
 
-### 🔒 Security First
-- **Malicious Command Detection**: Automatically blocks dangerous commands
-- **Safety Warnings**: Clear alerts for potentially risky operations
-- **Educational Focus**: Designed for learning, never executes actual commands
+</div>
 
-### 📊 Analytics & Tracking
-- **Unique Visitor Counting**: IP-based tracking for accurate visitor statistics
-- **Real-time Updates**: Live visitor counter in the footer
-- **Privacy Compliant**: No personal data collection, only IP addresses for counting
+---
 
-### 🎨 Modern UX
-- **Responsive Design**: Works perfectly on desktop, tablet, and mobile
-- **Dark/Light Mode**: Automatic theme switching based on system preferences
-- **Interactive Terminal**: Clean, intuitive interface for command input
-- **One-click Copying**: Easy sharing of command explanations
+## 🧠 Intelligence Engine
+
+ShellPanel AI leverages **Groq** and the **Llama-3.3-70b-versatile** model to provide sub-second command analysis. It doesn't just tell you what a command does; it breaks down every flag, operator, and pipe with surgical precision.
+
+### ✨ Key Features
+- **Instant Breakdown**: Get a granular analysis of each token in your shell command.
+- **Visual Mapping**: Interactive UI that highlights command structure.
+- **Safety Safeguards**: Intelligent detection of destructive patterns (e.g., recursive deletions, dangerous flags).
+- **Educational Context**: Direct links to manual pages and alternative examples.
+- **Privacy-First Tracking**: High-performance local visitor tracking using IP hashing.
+
+---
+
+## 🎨 Professional UX
+
+Designed for a premium experience, the interface features:
+- **Glassmorphism UI**: Modern, translucent aesthetic with smooth transitions.
+- **Dynamic Terminal**: Responsive command input that feels like a native environment.
+- **Real-time Analytics**: Live visitor counter with zero-latency updates.
+- **Dark Mode Optimization**: Hand-curated color palettes for deep focus.
+
+---
 
 ## 🚀 Quick Start
 
-### Prerequisites
-- Node.js 18+ 
-- npm, yarn, or pnpm package manager
-- Perplexity API key (for AI explanations)
+### 📋 Prerequisites
+- **Node.js**: 20.x or later
+- **Groq API Key**: Obtain one at [console.groq.com](https://console.groq.com/)
 
-### Installation
+### 🛠️ Installation
 
-\`\`\`bash
+```bash
 # Clone the repository
 git clone https://github.com/ambaskaryash/shell-panel-aipowered.git
 cd shell-panel-aipowered
 
-# Install dependencies
+# Install dependencies (cleaned and optimized)
 npm install
 
-# Set up environment variables
+# Configure Environment
 cp .env.example .env.local
-# Edit .env.local and add your Perplexity API key
+```
 
-# Start development server
+### 🔑 Environment Configuration
+Edit your `.env` or `.env.local` file:
+
+```env
+GROQ_API_KEY=gsk_your_key_here
+```
+
+### 🏃 Running Locally
+
+```bash
 npm run dev
-\`\`\`
-
-Visit `http://localhost:3000` to see the application running.
-
-### Environment Setup
-
-Create a `.env.local` file in the root directory:
-
-\`\`\`env
-PERPLEXITY_API_KEY=your_perplexity_api_key_here
-\`\`\`
-
-## 🎯 Usage Examples
-
-### Safe Commands
-\`\`\`bash
-ls -la                    # List files with detailed information
-grep -r "pattern" .       # Search for text recursively
-tar -xzvf archive.tar.gz  # Extract compressed archive
-\`\`\`
-
-### Commands with Warnings
-\`\`\`bash
-rm -rf /tmp/*            # Shows safety warning about deletion
-sudo systemctl restart   # Warns about system changes
-chmod 777 sensitive.txt  # Flags security implications
-\`\`\`
-
-## 🔧 API Endpoints
-
-### Command Analysis
-\`\`\`http
-POST /api/explain
-Content-Type: application/json
-
-{
-  "command": "tar -xzvf archive.tar.gz"
-}
-\`\`\`
-
-### Visitor Statistics
-\`\`\`http
-GET /api/visitors
-# Returns: {"uniqueVisitors": 42}
-
-POST /api/visitors
-# Registers new unique visitor (IP-based)
-\`\`\`
-
-## 🛠️ Tech Stack
-
-- **Frontend**: Next.js 15, React 18, TypeScript
-- **Styling**: Tailwind CSS, shadcn/ui components
-- **Icons**: Lucide React
-- **AI Integration**: Perplexity API
-- **Analytics**: Custom IP-based visitor tracking
-- **Deployment**: Vercel (optimized)
-
-## 📁 Project Structure
-
-\`\`\`
-shell-panel-aipowered/
-├── app/                    # Next.js App Router
-│   ├── api/               # API routes
-│   │   ├── explain/       # Command analysis endpoint
-│   │   └── visitors/      # Visitor tracking endpoint
-│   ├── globals.css        # Global styles
-│   ├── layout.tsx         # Root layout
-│   └── page.tsx           # Main application page
-├── components/            # React components
-│   ├── ui/               # shadcn/ui components
-│   ├── visitor-counter.tsx # Visitor counter display
-│   └── visual-command-explainer.tsx # Command visualization
-├── lib/                  # Utility functions
-│   ├── security.ts      # Command validation & security
-│   └── visitor-counter.ts # Client-side visitor tracking
-├── public/             # Static assets
-└── visitor-data.json   # Server-side visitor storage
-\`\`\`
-
-## 🚀 Deployment
-
-### Vercel (Recommended)
-1. Connect your GitHub repository to Vercel
-2. Add environment variables in Vercel dashboard
-3. Deploy automatically on push to main branch
-
-### One-Click Deploy
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/ambaskaryash/shell-panel-aipowered)
-
-## 🔒 Security Features
-
-### Command Validation
-- **Pattern Matching**: Detects dangerous command patterns
-- **Blacklist Validation**: Blocks known malicious commands
-- **Real-time Alerts**: Immediate warnings for risky commands
-
-### Privacy Protection
-- **No Personal Data**: Only IP addresses for unique counting
-- **No Tracking Cookies**: Privacy-first approach
-- **Transparent**: All tracking clearly disclosed
-
-## 📊 Analytics
-
-The application includes built-in analytics:
-- **Unique Visitor Counting**: IP-based tracking for accurate statistics
-- **Real-time Updates**: Live visitor counter in footer
-- **Privacy Compliant**: No personal data collection
-
-## 🤝 Contributing
-
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
-
-### Quick Contribution Steps
-1. Fork the repository
-2. Create feature branch: `git checkout -b feature/amazing-feature`
-3. Commit changes: `git commit -m 'Add amazing feature'`
-4. Push to branch: `git push origin feature/amazing-feature`
-5. Open Pull Request
-
-## 📚 Documentation
-
-- **[Wiki](https://github.com/ambaskaryash/shell-panel-aipowered/wiki)**: Complete documentation and guides
-- **[API Reference](https://github.com/ambaskaryash/shell-panel-aipowered/wiki/API-Documentation)**: Detailed API documentation
-- **[Security Guide](https://github.com/ambaskaryash/shell-panel-aipowered/wiki/Security)**: Security features and best practices 
-
-## 🐛 Bug Reports & Feature Requests
-
-- **Issues**: [Report bugs here](https://github.com/ambaskaryash/shell-panel-aipowered/issues)
-- **Discussions**: [Feature requests and questions](https://github.com/ambaskaryash/shell-panel-aipowered/discussions)
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- **Perplexity AI**: For providing the AI explanation API
-- **Next.js Team**: For the excellent framework
-- **shadcn/ui**: For beautiful, accessible components
-- **Contributors**: All amazing community contributors
+```
+Navigate to `http://localhost:3000`.
 
 ---
 
-**Built with ❤️ for the developer community**
+## 🔧 API Reference
+
+### `POST /api/explain`
+Analyzes a submitted shell command.
+**Body:** `{ "command": "tar -xzvf archive.tar.gz" }`
+
+### `GET /api/visitors`
+Fetches the current unique visitor count from the local data store.
+
+---
+
+## 🛡️ Security First
+
+ShellPanel AI is built with safety as a core principle:
+1. **No Execution**: The application never executes code on your machine.
+2. **Regex Validation**: Blocks known highly-dangerous patterns before they reach the AI.
+3. **Safety Warnings**: Clearly labels commands that modify the filesystem or system state.
+
+---
+
+## 📊 Project Architecture
+
+```text
+app/
+├── api/             # High-performance API routes
+│   └── explain/     # Groq-powered analysis engine
+components/
+├── ui/              # shadcn/ui shared components
+└── explainer/       # Core visual analysis components
+lib/                 # Modular utility functions
+```
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ---
 
 <div align="center">
 
-**⭐ Star this repository if you find it helpful!**
+Built with ❤️ by [ambaskaryash](https://github.com/ambaskaryash)
 
-[![Live Demo](https://img.shields.io/badge/🚀_Try_Live_Demo-Click_Here-green?style=for-the-badge)](https://explainshell-prodapp.vercel.app/)
+**⭐ Star the repo to show support!**
 
 </div>

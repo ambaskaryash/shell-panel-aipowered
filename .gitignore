@@ -1,0 +1,35 @@
+# Dependencies
+/node_modules
+/.pnpm-debug.log*
+
+# Next.js
+/.next/
+/out/
+
+# Production
+/build
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Local env files
+.env*.local
+.env
+.env.*
+!.env.example
+
+# Vercel
+.vercel
+
+# Testing
+/coverage
+
+# Misc
+.DS_Store
+*.pem
+
+# Persistent data
+visitor-data.json

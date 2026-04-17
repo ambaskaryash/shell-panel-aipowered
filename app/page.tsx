@@ -261,11 +261,11 @@ export default function ShellExplainer() {
                     <CommandTester command={command} onUseAlternative={(altCommand) => setCommand(altCommand)} />
                   </div>
                 )}
-                {!process.env.NEXT_PUBLIC_PERPLEXITY_CONFIGURED && (
+                {!process.env.NEXT_PUBLIC_GROQ_CONFIGURED && (
                   <Alert className="mt-4">
                     <AlertTriangle className="h-4 w-4" />
                     <AlertDescription className="text-sm">
-                      To enable AI-powered explanations, add your Perplexity API key as PERPLEXITY_API_KEY in your
+                      To enable AI-powered explanations, add your Groq API key as GROQ_API_KEY in your
                       environment variables.
                     </AlertDescription>
                   </Alert>
@@ -419,7 +419,7 @@ function FAQ() {
         <div>
           <strong>Q: Can I use this offline?</strong>
           <br />
-          A: No, real-time AI analysis requires an internet connection to query the Perplexity API.
+          A: No, real-time AI analysis requires an internet connection to query the Groq AI API.
         </div>
       </CardContent>
     </Card>

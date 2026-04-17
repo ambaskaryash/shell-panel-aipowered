@@ -54,7 +54,7 @@ AI ShellPanel is an intelligent web application that provides detailed explanati
 ### Prerequisites
 - Node.js 18+ 
 - npm, yarn, or pnpm package manager
-- Perplexity API key (for AI explanations)
+- Groq API key (for AI explanations)
 
 ### Quick Start
 \`\`\`bash
@@ -68,8 +68,8 @@ npm install
 # Set up environment variables
 cp .env.example .env.local
 
-# Add your Perplexity API key to .env.local
-# PERPLEXITY_API_KEY=your_api_key_here
+# Add your Groq API key to .env.local
+# GROQ_API_KEY=your_api_key_here
 
 # Start development server
 npm run dev
@@ -99,7 +99,7 @@ Visit `http://localhost:3000` to see the application running.
 3. **Environment Setup**
    Create a `.env.local` file in the root directory:
    \`\`\`env
-   PERPLEXITY_API_KEY=your_perplexity_api_key_here
+   GROQ_API_KEY=your_perplexity_api_key_here
    \`\`\`
 
 4. **Run the development server**
@@ -129,7 +129,7 @@ Visit `http://localhost:3000` to see the application running.
 
 | Variable | Description | Required |
 |----------|-------------|----------|
-| `PERPLEXITY_API_KEY` | API key for AI command explanations | Yes |
+| `GROQ_API_KEY` | API key for AI command explanations | Yes |
 | `NEXT_PUBLIC_VERCEL_URL` | Auto-set by Vercel for production | No |
 
 
@@ -235,7 +235,7 @@ The application implements multi-layer security:
 
 ### Vercel Deployment
 1. **Connect Repository**: Link GitHub repo to Vercel
-2. **Environment Variables**: Add `PERPLEXITY_API_KEY`
+2. **Environment Variables**: Add `GROQ_API_KEY`
 3. **Deploy**: Automatic deployment on push to main
 
 ### Environment-Specific Configuration
@@ -288,7 +288,7 @@ npm run lint
 ### Common Issues
 
 #### API Key Not Working
-- Verify Perplexity API key is valid
+- Verify Groq API key is valid
 - Check environment variable name matches exactly
 - Ensure API key has proper permissions
 
@@ -345,7 +345,7 @@ The application tracks unique visitors using IP-based counting:
 
 ## 🙏 Acknowledgments
 
-- **Perplexity AI**: For providing the AI explanation API
+- **Groq AI**: For providing the AI explanation API
 - **Next.js Team**: For the excellent framework
 - **Contributors**: All community contributors
 - **Users**: Everyone using and providing feedback
